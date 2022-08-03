@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Pee"/>
+    <meta
+      name="description"
+      content="A web3 dapp interacting with a smart contract on the SmartBCH Amber Testnet. For testing purposes only!"
+    />
+		<title>WeMove - a dapp</title>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+		<link rel="stylesheet" href="assets/css/spinkit.min.css">
+		<link rel="stylesheet" href="assets/css/normalize.css">
+		<link rel="stylesheet" href="assets/css/milligram.min.css">
+		<link rel="stylesheet" href="assets/css/index.css">
+		<script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="assets/js/web3@1.7.4.min.js"></script>
+    <script src="assets/js/web3modal@1.9.8.min.js"></script>
+    <script src="assets/js/walletconnect-web3-provider@1.7.8.min.js"></script>
+    <script src="assets/js/index.js"></script>
+	</head>
+	<body>
+		<header>
+			<div class="side">
+				<div id="title">WeMove</div>
+				<small><em>A web3 dapp interacting with a smart contract on the SmartBCH Amber Testnet. For testing purposes only!</em></small>
+			</div>
+			<!--
+			<div class="side">
+				<button class="button" id="wallet">Connect Wallet</button>
+			</div>
+			-->
+		</header>
+
+		<div class="container" id="connected" style="display:none;">
+			<ul>
+				<li>Type your name</li>
+				<li>Tap on the log button to store it on-chain</li>
+				<li>Tap on the call button to increment on-chain the number of times you've interacted with the smart contract</li>
+        <li>You can switch between different SmartBCH accounts in your wallet if your wallet supports this functonality. Make sure your wallet's network is set to the SmartBCH Amber Testnet.</li>
+				<li>Enjoy!</li>
+			</ul>
+
+      <hr>
+
+      <h3>All account balances</h3>
+
+      <p><strong>Selected account:</strong> <span id="selected-account"></span></p>
+
+      <table class="table table-listing">
+        <thead>
+          <th>Address</th>
+          <th>BCH balance</th>
+        </thead>
+        <tbody id="accounts"></tbody>
+      </table>
+
+      <hr>
+
+			<div class="linear-form">
+				<label for="logname">Name:</label>
+				<input type="text" placeholder="Type your name..." id="log-name">
+				<button class="button-deeppink" id="log-btn">Log</button>
+			</div>
+
+			<div class="contract-actions">
+				<button class="button-deeppink" id="call-btn">Call</button>
+				<button class="button-darkslateblue" id="check-name-btn">Check My Name</button>
+				<button class="button-darkslateblue" id="check-calls-btn">Check My Number Of Calls</button>
+			</div>
+
+      <h3>All users</h3>
+
+			<table>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Calls</th>
+					</tr>
+				</thead>
+				<tbody id="users"></tbody>
+			</table>
+
+	    <div id="templates" style="display: none">
+	      <template id="template-balance">
+	        <tr>
+	          <th class="address"></th>
+	          <td class="balance"></td>
+	        </tr>
+	      </template>
+	      <template id="template-users">
+	        <tr>
+	          <td class="name"></td>
+	          <td class="calls"></td>
+	        </tr>
+	      </template>
+	    </div>
+
+		</div>
+	</body>
+</html>
